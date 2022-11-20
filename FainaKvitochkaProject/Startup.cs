@@ -1,3 +1,4 @@
+using FainaKvitochka_BL.Options;
 using FainaKvitochka_DAL;
 using FainaKvitochka_DAL.Interfaces;
 using FainaKvitochka_DAL.Repositories;
@@ -26,6 +27,11 @@ namespace FainaKvitochkaProject
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<AuthOptions>(options =>
+                Configuration.GetSection(nameof(AuthOptions)).Bind(options));
+            services.Configure<HashOptions>(options =>
+                Configuration.GetSection(nameof(HashOptions)).Bind(options));
+
             services.AddDbContext<EFCoreDbContext>(options =>
                options.UseSqlServer(Configuration["ConnectionStrings:Default"], b => b.MigrationsAssembly("ListatTestProject_DAL")));
 

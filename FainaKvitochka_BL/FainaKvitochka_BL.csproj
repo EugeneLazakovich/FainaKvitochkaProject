@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FainaKvitochka_DAL\FainaKvitochka_DAL.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\FainaKvitochka_DAL\FainaKvitochka_DAL.csproj" />
   </ItemGroup>
 
 </Project>
