@@ -1,5 +1,7 @@
 ﻿using FainaKvitochka_DAL.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Collections.Generic;
 using System;
 
 namespace FainaKvitochka_DAL
@@ -22,6 +24,7 @@ namespace FainaKvitochka_DAL
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<News> News { get; set; }
         public DbSet<Form> Forms { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected EFCoreDbContext()
         {
@@ -34,7 +37,7 @@ namespace FainaKvitochka_DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            //modelBuilder.Entity<Item>().Has
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

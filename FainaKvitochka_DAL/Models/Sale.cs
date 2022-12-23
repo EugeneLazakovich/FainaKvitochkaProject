@@ -11,8 +11,10 @@ namespace FainaKvitochka_DAL.Models
         public TypeOfDelivery TypeOfDelivery { get; set; }
         public string Address { get; set; }
         public TypeOfPay TypeOfPay { get; set; }
+        public double Cost { get; set; }
         [ForeignKey("Client")]
         public Guid ClientId { get; set; }
         public Client Client { get; set; }
+        public bool IsNew { get; set; }
     }
 }
